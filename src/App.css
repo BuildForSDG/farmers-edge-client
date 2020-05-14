@@ -4,9 +4,8 @@
 
 .form-container{
   padding: 2rem;
-  background-color: forestgreen;
-  border: 2px sold azure;
-  margin: 2rem auto;
+  background-color:forestgreen;
+  margin: 4rem auto;
   max-width: 500px;
   border-radius: 5px;
 }
@@ -17,6 +16,7 @@
 
 .form-header a {
   text-decoration: none;
+  color: rgb(25, 156, 165);
 }
 
 form {
