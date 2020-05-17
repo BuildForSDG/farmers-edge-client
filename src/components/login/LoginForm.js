@@ -25,7 +25,8 @@ export default class LoginForm extends React.Component {
     const { email, password } = this.state;
 
     return (
-      <div className='form-container'>
+      <div className='login-container'>
+        
         <div className='form-header'>
           Sign In to Farmers Edge
           <a className='link'
@@ -37,7 +38,7 @@ export default class LoginForm extends React.Component {
           </a>
         </div>
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="login-form" onSubmit={this.handleSubmit}>
           <label htmlFor="email">Email</label>
           <input
             name="email"
@@ -54,7 +55,7 @@ export default class LoginForm extends React.Component {
             value={password}
             onChange={this.handleChange}
           />
-          <button type="submit">Login</button>
+          <button className="login-btn" type="submit">Login</button>
         </form>
       </div>
     );

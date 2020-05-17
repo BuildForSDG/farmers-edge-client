@@ -1,9 +1,15 @@
+* {box-sizing: border-box;}
+
+body{
+  background-color: beige;
+  }
+
 .App {
   font-family: sans-serif;
 }
 
-.form-container{
-  padding: 2rem;
+.login-container{
+  padding: 1rem;
   background-color:forestgreen;
   margin: 4rem auto;
   max-width: 500px;
@@ -19,8 +25,7 @@
   color: rgb(25, 156, 165);
 }
 
-form {
-  max-width: 500px;
+.login-form {
   width: 100%;
   margin: 0 auto;
 }
@@ -54,17 +59,72 @@ input.error {
   margin-bottom: 20px;
 }
 
-button {
+.login-btn {
   padding: 10px 15px;
   background-color: rgb(25, 156, 165);
   color: white;
   border: 1px solid rgb(25, 156, 165);
-  background-color: 250ms;
   border-radius: 5px;
 }
 
-button:hover {
+.login-btn:hover {
   cursor: pointer;
   background-color: white;
   color: rgb(25, 156, 165);
+}
+
+/* Register form */
+.register-container{
+  padding: 1rem;
+  max-width: 500px;
+  margin: 4rem auto;
+  background-color:grey;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.register-form {
+    width: 100%;
+    margin: 0 auto;
+}
+.register-row:after{
+    content: "";
+    display: table;
+    clear: both;  
+}
+
+.register input{
+    font-size: large;
+    width: 100%;
+    padding: 12px 20px;
+    margin:8px 0;
+    display:inline-block;
+    border: 3px solid #cccccc;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.register-btn{
+    width: 20%;
+    background-color:green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+    padding: 15px;
+}
+
+h2{
+    color: white;
+    
+}
+
+header{
+    background-color:green;
 }
