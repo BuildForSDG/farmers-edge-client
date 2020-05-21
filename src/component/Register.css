@@ -1,0 +1,18 @@
+body{
+background-color: hotpink;
+}
+form{
+    position: relative;
+    padding: 1em;
+    margin: 0 auto;
+}
+#register{
+    display: flexbox;
+    background-color: chartreuse;
+}
+input{
+    margin: 0.25 em;
+    min-width: 140px;
+    
+    
+}
