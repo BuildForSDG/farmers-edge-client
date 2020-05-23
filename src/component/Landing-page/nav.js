@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './nav.css'
+import './App.css'
 import logo from './asset/logo.png'
 class Nav extends Component {
     render() {

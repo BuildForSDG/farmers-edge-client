@@ -1,14 +1,26 @@
-import React, { Component } from 'react'
-import Landing from './component/Landing-page/landing.js'
+import React from 'react';
+import './App.css';
+import Register from './components/register/Register.js';
+import LoginForm from './components/login/LoginForm.js';
+import Header from './components/header/Header.js';
 
- class App extends Component {
-    render() {
-        return (
-            <div>
-               <Landing />
-            </div>
-        )
-    }
+function App(){
+    return(
+        <div>
+            
+            <div className="container">
+                <Header/>
+                <div className="row">
+                    <div className="col-6">
+                        <Register/> 
+                    </div>
+                    <div className="col-6">
+                        <LoginForm/>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    )
 }
 
 export default App;

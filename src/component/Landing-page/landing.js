@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './landing.css'
+import './App.css'
 import Nav from './nav'
 
 
