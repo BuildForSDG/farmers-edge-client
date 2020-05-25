@@ -1,0 +1,119 @@
+*
+{margin: 0;
+padding: 0;
+   
+	
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/img.d03074c6.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.Welcome-msg{
+    position: relative;
+    text-align: center;
+    font-family: monospace;
+    color:lightgreen;
+    top: 150px;
+}
+.h1{
+    font-size: 50px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    list-style: height 0;
+    margin: 0;
+    color: crimson;
+}
+.h2{
+    font-size: 50px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    list-style: height 0;
+    margin: 0;
+    color:crimson;
+}
+.btn{
+    font-size: 18px;
+    color: rgb(29, 43, 231);
+    margin: 5px;
+    padding: 7px 22px;
+    text-decoration: none;
+    border: 1px solid chartreuse;
+    border-radius: 25px;
+
+}
+.btn-more{
+    background:rgb(4, 224, 103);
+}
+.btn-more:hover{
+    background: wheat;
+    transition: 0.5sec;
+}
+
+p{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    color:white; 
+}
+.navbar{
+
+    display: flex;
+	justify-content: space-around;
+	align-items: center;
+    min-height: 4vh;
+    background-color: green;
+    overflow: hidden;
+	
+   
+}
+.logo{
+    opacity: 1;
+}
+img{
+    border-radius: 50%;
+    float: left;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    white-space: pre-line;
+  
+}
+.nav-links li{
+    font-size: 15px;
+    color: rgb(29, 43, 231);
+    margin: 1px;
+    padding: 7px 22px;
+    text-decoration: none;
+    border: 1px solid chartreuse;
+    border-radius: 25px;
+    list-style: none;
+
+}
+.nav-links a{
+	color: white;
+	text-decoration: none;
+	letter-spacing:2px;
+	font-size: 14px;
+	padding: 1px;
+	font-family: sans-serif;
+    font-weight: bold;
+}
+h3{
+    float: right;
+    color: ivory;
+    margin-right: 2px;
+    padding: 4px 5px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */
