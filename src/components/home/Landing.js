@@ -6,14 +6,16 @@ export default class Landing extends Component {
     render() {
         return (
             <div style={{backgroundImage: "url(" + home + ")"}} className='app-container'>
-                <div className='Welcome-msg'>
-                <h1 className='h1'>We transform the </h1>
-                <h1 className='h2'>Agriculture world</h1><br></br>
-                <p>We help increase crop production by providing </p>
-                <p>affordable and actionable information to a range of</p>
-                <p>actors most imporant smallholders farmers</p><br></br>
+                <div className='mission'>
+                <div>
+                    <h1 className='caps'> We transform the </h1>
+                    <h1 className='caps'> Agriculture world </h1>
+                </div><br/>
+                <p className='home'> We help increase crop production by providing <br/>
+                    affordable and actionable information to a range of <br/>
+                    actors, most imporantly smallholder farmers </p><br/>
 
-                <Link to = '/signup' className='btn btn-more'>More</Link>
+                <Link to = '/login' className='btn btn-more'>More</Link>
             </div>
             </div>
         )

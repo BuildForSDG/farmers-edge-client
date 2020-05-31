@@ -1,8 +1,11 @@
 import React from "react";
+import {Link} from 'react-router-dom';
+import {LoginUser} from '../../axiosConfigs';
 
 export default class LoginForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       email: "",
       password: ""
@@ -15,10 +18,12 @@ export default class LoginForm extends React.Component {
     });
   };
 
-  handleSubmit = event => {
-    console.log("Submitting");
-    console.log(this.state);
-  };
+  handleSubmit = (event) => {
+
+        event.preventDefault();
+  
+        LoginUser(this.state.email, this.state.password);
+  }    
 
   render() {
 
@@ -57,6 +62,10 @@ export default class LoginForm extends React.Component {
           />
           <button className="login-btn" type="submit">Login</button>
         </form>
+        <hr/>
+        <small className = 'text-white'>
+          Need an account? <Link to = '/signup' className = 'text-info'>Register</Link>
+        </small>
       </div>
     );
   }

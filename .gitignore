@@ -9,6 +9,8 @@
 dist/
 logo.svg
 
+.idea/
+
 # testing
 /coverage
 
