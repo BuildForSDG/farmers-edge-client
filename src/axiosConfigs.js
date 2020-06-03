@@ -8,7 +8,7 @@ export const LoginUser = (email, password) => {
             password: password
         }
     
-    axios.post('http://127.0.0.1:8000/auth/v1/login/', data)
+    axios.post('http://localhost:8000/auth/v1/login/', data)
         .then(res => {
             
         let token = res.data.token;
@@ -27,35 +27,42 @@ export const LoginUser = (email, password) => {
             window.location.href = '/customers';
         }
     })
+    //   .catch(err => console.log(err))
 }
 
 // consume register enpoint
 export const SignUp = (
     first_name, surname, 
-    email, password, location, 
+    username, email,
+    password, location, 
     phone_number, id_number,
     User_type, image
     ) => {
 
     let data = {
-        first_name: first_name,
-        surname: surname,
-        // username: username,
-        email: email,
-        password: password,
-        location: location,
-        phone_Number: phone_number,
-        id_number: id_number,
-        User_type: User_type,
-        image: image
-    };
+            first_name: first_name,
+            surname: surname,
+            username: username,
+            email: email,
+            password: password,
+            location: location,
+            phone_number: phone_number,
+            id_number: id_number,
+            User_type: User_type,
+            image: image
+        }
 
-    axios.post('http://127.0.0.1:8000/auth/v1/register/', data)
-            .then(res => {
-                
-                console.log(res.data.status);
+    console.log(data)
+
+    let url = 'http://localhost:8000/auth/v1/register/';
+
+    axios.post(url, JSON.stringify(data))
+    .then(res => {
             
-            window.location.href = '/login';
-        })
+            console.log(res.data.user);
+        
+        window.location.href = '/login';
+    })
+    // .catch(err => console.log(err))
 
-    }
+}

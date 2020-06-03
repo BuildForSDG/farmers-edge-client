@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import {SignUp} from '../../axiosConfigs';
+import {SignUp} from './../../axiosConfigs';
 
 class Register extends React.Component {
     constructor(){
@@ -8,7 +8,7 @@ class Register extends React.Component {
         this.state = {
                 first_name:'',
                 surname:'',
-                // username:'',
+                username:'',
                 email:'',
 		        password:'',
                 location:'',
@@ -23,31 +23,26 @@ class Register extends React.Component {
     };
 
     updateState(inputs) {
+        // console.log(inputs.target.value)
         this.setState(
             {
-                [inputs.target.name]:inputs.target.value,
-              
+                [inputs.target.name]:inputs.target.value
+
             });
     };
 
     onSubmit(event) {
 
         event.preventDefault();
-
-        let data = {
-                first_name: this.state.first_name,
-                surname: this.state.surname,
-                //username:this.state.username,
-                email: this.state.email,
-                password: this.state.password,
-                location: this.state.location,
-                phone_Number:this.state.phone_number,
-                id_number: this.state.id_number,
-                User_type: this.state.User_type,
-                image: this.state.image
-            };
             
-            SignUp(data);
+        SignUp(
+            this.state.first_name, this.state.surname, 
+            this.state.username, this.state.email, 
+            this.state.password,this.state.location,
+            this.state.phone_number, this.state.id_number,
+            this.state.User_type, this.state.image
+        );
+
     }
     
     render(){
@@ -84,14 +79,14 @@ class Register extends React.Component {
                             required
                         />
 
-                        {/* <input 
+                        <input 
                             type = 'text' 
                             name ='username' 
                             placeholder ='username' 
                             value={this.state.username} 
                             onChange={this.updateState}
                             required
-                        />  */}
+                        />
                         
                         <input 
                             type = 'email' 
@@ -121,7 +116,7 @@ class Register extends React.Component {
                         />  
 
                         <input 
-                            type = 'number' 
+                            type = 'text' 
                             name ='phone_number' 
                             placeholder ='Phone Number' 
                             value={this.state.phone_number} 
@@ -130,7 +125,7 @@ class Register extends React.Component {
                         />  
 
                         <input 
-                            type = 'number' 
+                            type = 'text' 
                             name = 'id_number' 
                             placeholder ='ID Number' 
                             value={this.state.id_number} 
@@ -138,9 +133,12 @@ class Register extends React.Component {
                             required
                         />
                             
-                        <select 
-                            value={this.state.User_type} 
+                        <select
+                            // defaultValue = 'Category'
+                            name = 'User_type'
+                            value = {this.state.User_type}
                             onChange={this.updateState}>
+                            {/* <option value="Category" disabled>Category</option> */}
                             <option value="Farmer">Farmer</option>
                             <option value="Customer">Customer</option>
                         </select>
@@ -149,7 +147,7 @@ class Register extends React.Component {
                         <input 
                             type='file' 
                             ref='img' 
-                            name='img' 
+                            name='image' 
                             accept='image/*'
                             value ={this.state.image}
                             onChange={this.updateState}
