@@ -27,3 +27,6 @@ logo.svg
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.cache/
+dist/
