@@ -1,16 +1,20 @@
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-body{
+/* body {
   background-color: beige;
-  }
+  } */
 
 .App {
   font-family: sans-serif;
 }
 
-.login-container{
+.login-container {
   padding: 1rem;
-  background-color:forestgreen;
+  background-color: forestgreen;
   margin: 4rem auto;
   max-width: 500px;
   border-radius: 5px;
@@ -61,6 +65,7 @@ input.error {
 
 .login-btn {
   padding: 10px 15px;
+  margin: 4px;
   background-color: rgb(25, 156, 165);
   color: white;
   border: 1px solid rgb(25, 156, 165);
@@ -74,172 +79,180 @@ input.error {
 }
 
 /* Register form */
-.register-container{
+.register-container {
   padding: 1rem;
   max-width: 500px;
   margin: 4rem auto;
-  background-color:grey;
+  background-color: forestgreen;
   text-align: center;
   border-radius: 5px;
 }
 
 .register-form {
-    width: 100%;
-    margin: 0 auto;
-}
-.register-row:after{
-    content: "";
-    display: table;
-    clear: both;  
+  width: 100%;
+  margin: 0 auto;
 }
 
-.register input{
-    font-size: large;
-    width: 100%;
-    padding: 12px 20px;
-    margin:8px 0;
-    display:inline-block;
-    border: 3px solid #cccccc;
-    border-radius: 4px;
-    align-items: center;
+.register-row::after {
+  content: "";
+  display: table;
+  clear: both;  
 }
 
-.register-btn{
-    width: 20%;
-    background-color:green;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.register-form input, select {
+  font-size: large;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #cccccc;
+  border-radius: 4px;
+  align-items: center;
 }
 
-h1{
-    text-align: center;
-    padding: 15px;
+.register-btn {
+  width: 20%;
+  background-color: rgb(25, 156, 165);
+  color: white;
+  padding: 10px 20px;
+  margin: 4px 0;
+  border: 1px solid rgb(25, 156, 165);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-h2{
-    color: white;
+.register-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(25, 156, 165);
+}
+
+/* h1 {
+  text-align: center;
+  padding: 15px;
+}
+
+h2 {
+  color: white;
     
-}
+} */
 
-header{
-    background-color:green;
+header {
+  background-color: green;
 }
 
 /* Landing page */
-*
-{margin: 0;
-padding: 0;
-   
-	
-}
-.container{
-    height: 100vh;
-    width: 100%;
-    background-image: url(asset/img.jpg);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
+
+.app-container {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.Welcome-msg{
-    position: relative;
-    text-align: center;
-    font-family: monospace;
-    color:lightgreen;
-    top: 150px;
-}
-.h1{
-    font-size: 50px;
-    font-weight: bolder;
-    letter-spacing: 2px;
-    list-style: height 0;
-    margin: 0;
-    color: crimson;
-}
-.h2{
-    font-size: 50px;
-    font-weight: bolder;
-    letter-spacing: 2px;
-    list-style: height 0;
-    margin: 0;
-    color:crimson;
-}
-.btn{
-    font-size: 18px;
-    color: rgb(29, 43, 231);
-    margin: 5px;
-    padding: 7px 22px;
-    text-decoration: none;
-    border: 1px solid chartreuse;
-    border-radius: 25px;
-
-}
-.btn-more{
-    background:rgb(4, 224, 103);
-}
-.btn-more:hover{
-    background: wheat;
-    transition: 0.5sec;
+.mission {
+  position: relative;
+  text-align: center;
+  font-family: monospace;
+  color: lightgreen;
+  top: 150px;
 }
 
-p{
-    font-size: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0;
-    color:white; 
+.caps {
+  font-size: 50px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0;
+  color: rgb(80, 69, 71);
 }
+
+.home {
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  color: white; 
+}
+
+.btn {
+  font-size: 18px;
+  color: rgb(29, 43, 231);
+  margin: 5px;
+  padding: 7px 22px;
+  text-decoration: none;
+  border: 1px solid chartreuse;
+  border-radius: 25px;
+
+}
+
+.btn-more {
+  background: rgb(4, 224, 103);
+}
+
+.btn-more:hover {
+  background: wheat;
+  transition: 0.5s;
+}
+
 /* navbar */
-.navbar{
-
+.navbar {
   display: flex;
-justify-content: space-around;
-align-items: center;
+  justify-content: space-around;
+  align-items: center;
   min-height: 4vh;
   background-color: green;
   overflow: hidden;
-
- 
 }
-.logo{
+
+.logo {
   opacity: 1;
 }
-img{
+
+img {
   border-radius: 50%;
   float: left;
 }
-.nav-links{
+
+.nav-links {
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 40%;
   white-space: pre-line;
-
 }
-.nav-links li{
+
+.nav-links li {
   font-size: 15px;
-  color: rgb(29, 43, 231);
   margin: 1px;
   padding: 7px 22px;
   text-decoration: none;
   border: 1px solid chartreuse;
   border-radius: 25px;
   list-style: none;
-
 }
-.nav-links a{
-color: white;
-text-decoration: none;
-letter-spacing:2px;
-font-size: 14px;
-padding: 1px;
-font-family: sans-serif;
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  letter-spacing:2px;
+  font-size: 14px;
+  padding: 1px;
+  font-family: sans-serif;
   font-weight: bold;
 }
-h3{
+
+.nav-links li:hover {
+  background: white;;
+  transition: 1s;
+}
+
+.nav-links li a:hover {
+  color: green;
+  transition: 1s;
+}
+
+.logo_text {
   float: right;
   color: ivory;
   margin-right: 2px;

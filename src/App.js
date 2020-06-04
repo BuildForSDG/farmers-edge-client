@@ -1,25 +1,30 @@
 import React from 'react';
 import './App.css';
-import Register from './components/register/Register.js';
-import LoginForm from './components/login/LoginForm.js';
-import Header from './components/header/Header.js';
+import {Switch, Route} from 'react-router-dom';
+import Register from './components/auth/Register.js';
+import LoginForm from './components/auth/LoginForm.js';
+import Contacts from './components/home/Contacts.js';
+import Landing from './components/home/Landing.js';
+import NavBar from './components/home/NavBar.js';
+import Farmers from './components/dashboard/Farmers.js';
+import Customers from './components/dashboard/Customers.js';
+import RouteRedirect from './components/RouteRedirect.js';
+// import Default from './components/Default.js';
 
 function App(){
     return(
-        <div>
-            
-            <div className="container">
-                <Header/>
-                <div className="row">
-                    <div className="col-6">
-                        <Register/> 
-                    </div>
-                    <div className="col-6">
-                        <LoginForm/>
-                    </div>
-                </div>
-            </div> 
-        </div>
+        <React.Fragment>
+            <NavBar />
+            <Switch>
+                <Route exact strict path='/' component={Landing} />
+                <Route path='/login' component={LoginForm} />
+                <Route path='/signup' component={Register} />
+                <Route path='/contacts/' component={Contacts} />
+                <RouteRedirect path='/farmers' component={Farmers} />
+                <RouteRedirect path='/customers' component={Customers} />
+                {/* <Route component={Default} /> */}
+            </Switch>
+        </React.Fragment>
     )
 }
 

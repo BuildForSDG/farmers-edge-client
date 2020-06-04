@@ -5,6 +5,12 @@
 /.pnp
 .pnp.js
 
+.cache/
+dist/
+logo.svg
+
+.idea/
+
 # testing
 /coverage
 
