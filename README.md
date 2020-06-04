@@ -87,7 +87,6 @@ First, you can send a mail to buildforsdg@andela.com to indicate your interest, 
 
 * [w3schools](https://www.w3schools.com/)
 * [ReactJs](https://reactjs.org/docs/getting-started.html)
-* [DRF](https://www.django-rest-framework.org/tutorial/quickstart/)
 
 ## LICENSE
 MIT
