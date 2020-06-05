@@ -6,7 +6,6 @@ export const LoginUser = (email, password) => {
     email: email,
     password: password
   }
-  
   axios.post('http://localhost:8000/auth/v1/login/', data)
     .then(res => {  
     const token = res.data.token;
@@ -19,9 +18,7 @@ export const LoginUser = (email, password) => {
 
     if (userType === 'farmer') {
       window.location.href = '/farmers';
-    }
-
-    else if (userType === 'customer') {
+    } else if (userType === 'customer') {
       window.location.href = '/customers';
     }
 })
@@ -29,29 +26,30 @@ export const LoginUser = (email, password) => {
 }
 
 // consume register enpoint
-export const SignUp = (first_name, surname, username, email, password, location, phone_number, id_number,User_type, image) => {
+export const SignUp = (
+  firstName, surname, 
+  username, email, 
+  password, location, 
+  phoneNumber, idNumber, 
+  userType, image) => {
   const data = {
-    first_name: first_name,
+    firstName: firstName,
     surname: surname,
     username: username,
     email: email,
     password: password,
     location: location,
-    phone_number: phone_number,
-    id_number: id_number,
-    User_type: User_type,
+    phoneNumber: phoneNumber,
+    idNumber: idNumber,
+    userType: userType,
     image: image
   }
-
-  console.log(data)
-
+  // console.log(data)
   const url = 'http://localhost:8000/auth/v1/register/';
-
   axios.post(url, JSON.stringify(data))
   .then(res => {   
-    console.log(res.data.user);
+    // console.log(res.data.user);
     window.location.href = '/login';
   })
   // .catch(err => console.log(err))
-
 }
