@@ -43,6 +43,7 @@ input {
 label {
   margin-bottom: 5px;
   height: 22px;
+
 }
 
 input {
@@ -96,16 +97,17 @@ input.error {
 .register-row::after {
   content: "";
   display: table;
-  clear: both;  
+  clear: both;
 }
 
-.register-form input, select {
+.register-form input,
+select {
   font-size: large;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 3px solid #cccccc;
+  border: 3px solid #ccc;
   border-radius: 4px;
   align-items: center;
 }
@@ -134,7 +136,7 @@ input.error {
 
 h2 {
   color: white;
-    
+
 } */
 
 header {
@@ -171,9 +173,14 @@ header {
 
 .home {
   font-size: 25px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:
+    'Gill Sans',
+    'Gill Sans MT',
+    Calibri,
+    'Trebuchet MS',
+    sans-serif;
   margin: 0;
-  color: white; 
+  color: white;
 }
 
 .btn {
@@ -184,7 +191,6 @@ header {
   text-decoration: none;
   border: 1px solid chartreuse;
   border-radius: 25px;
-
 }
 
 .btn-more {
@@ -235,7 +241,7 @@ img {
 .nav-links li a {
   color: white;
   text-decoration: none;
-  letter-spacing:2px;
+  letter-spacing: 2px;
   font-size: 14px;
   padding: 1px;
   font-family: sans-serif;
@@ -243,7 +249,7 @@ img {
 }
 
 .nav-links li:hover {
-  background: white;;
+  background: white;
   transition: 1s;
 }
 

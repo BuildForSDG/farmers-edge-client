@@ -6,15 +6,15 @@ class Register extends React.Component {
     constructor(){
         super()
         this.state = {
-                first_name:'',
+                firstName:'',
                 surname:'',
                 username:'',
                 email:'',
 		        password:'',
                 location:'',
-                phone_number:'',
-                id_number:'',
-                User_type:'',
+                phoneNumber:'',
+                idNumber:'',
+                userType:'',
                 image: ''
             }
 
@@ -36,11 +36,11 @@ class Register extends React.Component {
         event.preventDefault();
             
         SignUp(
-            this.state.first_name, this.state.surname, 
+            this.state.firstName, this.state.surname, 
             this.state.username, this.state.email, 
             this.state.password,this.state.location,
-            this.state.phone_number, this.state.id_number,
-            this.state.User_type, this.state.image
+            this.state.phoneNumber, this.state.idNumber,
+            this.state.userType, this.state.image
         );
 
     }
@@ -63,9 +63,9 @@ class Register extends React.Component {
                     <form className='register-form' onSubmit={this.onSubmit}>
                         <input 
                             type = 'text' 
-                            name ='first_name' 
+                            name ='firstName' 
                             placeholder ='First Name' 
-                            value={this.state.first_name} 
+                            value={this.state.firstName} 
                             onChange={this.updateState}
                             required
                         /> 
@@ -117,26 +117,26 @@ class Register extends React.Component {
 
                         <input 
                             type = 'text' 
-                            name ='phone_number' 
+                            name ='phoneNumber' 
                             placeholder ='Phone Number' 
-                            value={this.state.phone_number} 
+                            value={this.state.phoneNumber} 
                             onChange={this.updateState}
                             required
                         />  
 
                         <input 
                             type = 'text' 
-                            name = 'id_number' 
+                            name = 'idNumber' 
                             placeholder ='ID Number' 
-                            value={this.state.id_number} 
+                            value={this.state.idNumber} 
                             onChange={this.updateState}
                             required
                         />
                             
                         <select
                             // defaultValue = 'Category'
-                            name = 'User_type'
-                            value = {this.state.User_type}
+                            name = 'userType'
+                            value = {this.state.userType}
                             onChange={this.updateState}>
                             {/* <option value="Category" disabled>Category</option> */}
                             <option value="Farmer">Farmer</option>

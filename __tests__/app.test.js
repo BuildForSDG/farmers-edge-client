@@ -1,12 +1,12 @@
-import app from '../src/index';
+import App from '../src/index';
 
 describe('app module', () => {
   test('it exists', async () => {
-    expect(app).toBeDefined();
+    expect(App).toBeDefined();
   });
 
   test('it returns program name with SDGs', async () => {
-    const result = await app();
+    const result = await App();
     const sdgPos = (result || '').indexOf('SDG');
     expect(sdgPos).toBeGreaterThanOrEqual(0);
   });

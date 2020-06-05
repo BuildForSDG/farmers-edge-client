@@ -18,8 +18,8 @@ This app aims to address hunger problem in the world by focusing on achievemment
 #### Prerequisites
 
 ```
-- node
-- browser(Preferably chrome)
+-  node
+-  browser(Preferably chrome)
 ```
 
 #### Installation
@@ -49,11 +49,11 @@ yarn start
 ```
 #### Further info
 
-- Install additional dependencies: `yarn add <dependency-name> [-D]`
-- Run tests: `yarn test`
-- Run tests with test coverage info: `yarn test:cover`
-- Check the codebase for proper syntax and formatting compliance: `yarn lint`
-- Run the app in local dev mode: `yarn start`. Sets up a local web server at localhost:3000
+-  Install additional dependencies: `yarn add <dependency-name> [-D]`
+-  Run tests: `yarn test`
+-  Run tests with test coverage info: `yarn test:cover`
+-  Check the codebase for proper syntax and formatting compliance: `yarn lint`
+-  Run the app in local dev mode: `yarn start`. Sets up a local web server at localhost:3000
 
 #### Url for the hosted app in Netlify
 
@@ -63,18 +63,18 @@ To be provided soon
 
 ### Authentication
 
-1. User can register
-2. Verified user can login
-3. Authenticated user can reset password
-4. Authenticated user can view their dashboard and update it
+-  User can register
+-  Verified user can login
+-  Authenticated user can reset password
+-  Authenticated user can view their dashboard and update it
 
 ## Authors
 
 List the team behind this project. Their names linked to their Github, LinkedIn, or Twitter accounts should siffice. Ok to signify the role they play in the project, including the TTL and mentor
 
-* [Ogunlana Tunbosun](https://github.com/bosunogunlana) - Mentor
-* [Levy Naibei](https://github.com/Levy-Naibei) - TTL
-* [Sam Mwangi](https://github.com/SAWAMWA)
+-  [Ogunlana Tunbosun](https://github.com/bosunogunlana) - Mentor
+-  [Levy Naibei](https://github.com/Levy-Naibei) - TTL and Team player
+-  [Sam Mwangi](https://github.com/SAWAMWA) - Team Player
 
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
@@ -85,8 +85,8 @@ First, you can send a mail to buildforsdg@andela.com to indicate your interest, 
 
 ## Acknowledgements
 
-* [w3schools](https://www.w3schools.com/)
-* [ReactJs](https://reactjs.org/docs/getting-started.html)
+-  [w3schools](https://www.w3schools.com/)
+-  [ReactJs](https://reactjs.org/docs/getting-started.html)
 
 ## LICENSE
 MIT
