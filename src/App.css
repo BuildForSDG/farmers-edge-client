@@ -27,20 +27,17 @@
 .form-header a {
   text-decoration: none;
   color: rgb(25, 156, 165);
-
 }
 
 .login-form {
   width: 100%;
   margin: 0 auto;
-
 }
 
 label,
 input {
   display: block;
   width: 100%;
-
 }
 
 label {
@@ -54,7 +51,6 @@ input {
   padding: 10px;
   border-radius: 3px;
   border: 1px solid #777;
-
 }
 
 input.error {
@@ -66,7 +62,6 @@ input.error {
   margin-top: -15px;
   font-size: 14px;
   margin-bottom: 20px;
-
 }
 
 .login-btn {
@@ -76,14 +71,12 @@ input.error {
   color: white;
   border: 1px solid rgb(25, 156, 165);
   border-radius: 5px;
-
 }
 
 .login-btn:hover {
   cursor: pointer;
   background-color: white;
   color: rgb(25, 156, 165);
-
 }
 
 /* Register form */
@@ -94,20 +87,17 @@ input.error {
   background-color: forestgreen;
   text-align: center;
   border-radius: 5px;
-
 }
 
 .register-form {
   width: 100%;
   margin: 0 auto;
-
 }
 
 .register-row::after {
   content: "";
   display: table;
   clear: both;
-
 }
 
 .register-form input,
@@ -120,7 +110,6 @@ select {
   border: 3px solid #ccc;
   border-radius: 4px;
   align-items: center;
-
 }
 
 .register-btn {
@@ -132,14 +121,12 @@ select {
   border: 1px solid rgb(25, 156, 165);
   border-radius: 4px;
   cursor: pointer;
-
 }
 
 .register-btn:hover {
   cursor: pointer;
   background-color: white;
   color: rgb(25, 156, 165);
-
 }
 
 /* h1 {
@@ -165,7 +152,6 @@ header {
   background-position: center;
   position: relative;
   overflow: hidden;
-
 }
 
 .mission {
@@ -174,7 +160,6 @@ header {
   font-family: monospace;
   color: lightgreen;
   top: 150px;
-
 }
 
 .caps {
@@ -184,7 +169,6 @@ header {
   line-height: 1.5;
   margin: 0;
   color: rgb(80, 69, 71);
-
 }
 
 .home {
@@ -197,7 +181,6 @@ header {
     sans-serif;
   margin: 0;
   color: white;
-
 }
 
 .btn {
@@ -208,7 +191,6 @@ header {
   text-decoration: none;
   border: 1px solid chartreuse;
   border-radius: 25px;
-
 }
 
 .btn-more {
@@ -218,7 +200,6 @@ header {
 .btn-more:hover {
   background: wheat;
   transition: 0.5s;
-
 }
 
 /* navbar */
@@ -229,7 +210,6 @@ header {
   min-height: 4vh;
   background-color: green;
   overflow: hidden;
-
 }
 
 .logo {
@@ -239,7 +219,6 @@ header {
 img {
   border-radius: 50%;
   float: left;
-
 }
 
 .nav-links {
@@ -247,7 +226,6 @@ img {
   justify-content: space-around;
   width: 40%;
   white-space: pre-line;
-
 }
 
 .nav-links li {
@@ -258,7 +236,6 @@ img {
   border: 1px solid chartreuse;
   border-radius: 25px;
   list-style: none;
-
 }
 
 .nav-links li a {
@@ -269,19 +246,16 @@ img {
   padding: 1px;
   font-family: sans-serif;
   font-weight: bold;
-
 }
 
 .nav-links li:hover {
   background: white;
   transition: 1s;
-
 }
 
 .nav-links li a:hover {
   color: green;
   transition: 1s;
-
 }
 
 .logo_text {
@@ -292,5 +266,4 @@ img {
   font-size: 20px;
   font-weight: bolder;
   margin-top: 10px;
-
 }
