@@ -1,6 +1,6 @@
 .pln { color: #000; }
 
-@media screen  {
+@media screen {
   .str { color: #080; }
 
   .kwd { color: #008; }
@@ -28,7 +28,7 @@
 }
 
 @media print,
-projection {
+  projection {
   .str { color: #060; }
 
   .kwd {
@@ -86,4 +86,3 @@ li.L3,
 li.L5,
 li.L7,
 li.L9 { background: #eee; }
-
