@@ -1,14 +1,4 @@
-// import React from 'react'
-
-// export default function Contacts({match}) {
-//     return (
-//        <h1> Contact us, {match.params.username} </h1>
-//     )
-// }
-
-
 import React, { Component } from 'react'
-import './App.css'
 import axios from 'axios';
 
 class Contactus extends Component {
