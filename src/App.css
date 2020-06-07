@@ -307,6 +307,6 @@ button[type=submit]{
 /*about us*/
 .about{
   text-align: center;
-  color: blue;
+  color: rgb(133, 133, 201);
   width: auto;
 }
