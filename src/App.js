@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom';
 import Register from './components/auth/Register.js';
 import LoginForm from './components/auth/LoginForm.js';
 import Contacts from './components/home/Contacts.js';
+import About from './components/home/About.js';
 import Landing from './components/home/Landing.js';
 import NavBar from './components/home/NavBar.js';
 import Farmers from './components/dashboard/Farmers.js';
@@ -20,6 +21,7 @@ function App(){
                 <Route path='/login' component={LoginForm} />
                 <Route path='/signup' component={Register} />
                 <Route path='/contacts/' component={Contacts} />
+                <Route path='/about/' component={About} />
                 <RouteRedirect path='/farmers' component={Farmers} />
                 <RouteRedirect path='/customers' component={Customers} />
                 {/* <Route component={Default} /> */}

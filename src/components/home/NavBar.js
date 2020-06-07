@@ -24,6 +24,7 @@ export default class NavBar extends Component {
                     <h3 className='logo_text'>Farmers Edge</h3>
                 </div>
                 <ul className='nav-links'>
+                    <li><Link to='/about'> About </Link></li>
                     <li><Link to='/farmers'>Farmers </Link> </li>
                     <li><Link to='/customers'> Customers </Link></li>
                     <li><Link to='/contacts'> Contact </Link></li>
