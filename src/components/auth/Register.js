@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+// import { toast } from 'react-toastify';
 import {SignUp} from './../../axiosConfigs';
 
 class Register extends React.Component {
@@ -14,15 +15,14 @@ class Register extends React.Component {
                 location:'',
                 phoneNumber:'',
                 idNumber:'',
-                userType:'',
-                image: ''
+                typeUser:''
             }
 
         this.updateState = this.updateState.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    updateState(inputs) {
+    updateState = (inputs) => {
         // console.log(inputs.target.value)
         this.setState(
             {
@@ -31,7 +31,7 @@ class Register extends React.Component {
             });
     };
 
-    onSubmit(event) {
+    handleSubmit = (event) => {
 
         event.preventDefault();
             
@@ -40,15 +40,14 @@ class Register extends React.Component {
             this.state.username, this.state.email, 
             this.state.password,this.state.location,
             this.state.phoneNumber, this.state.idNumber,
-            this.state.userType, this.state.image
+            this.state.typeUser
         );
-
     }
     
     render(){
         return(
                 <div className='register-container'>
-                    
+
                     <div className='form-header'>
                         Sign Up in Farmers Edge
                         <a className='link'
@@ -60,7 +59,7 @@ class Register extends React.Component {
                         </a>
                     </div>
 
-                    <form className='register-form' onSubmit={this.onSubmit}>
+                    <form className='register-form' onSubmit={this.handleSubmit}>
                         <input 
                             type = 'text' 
                             name ='firstName' 
@@ -134,25 +133,13 @@ class Register extends React.Component {
                         />
                             
                         <select
-                            // defaultValue = 'Category'
-                            name = 'userType'
-                            value = {this.state.userType}
+                            defaultValue = 'Category'
+                            name = 'typeUser'
                             onChange={this.updateState}>
-                            {/* <option value="Category" disabled>Category</option> */}
-                            <option value="Farmer">Farmer</option>
-                            <option value="Customer">Customer</option>
-                        </select>
-
-                        <label htmlFor='img'>Upload Image:</label>
-                        <input 
-                            type='file' 
-                            ref='img' 
-                            name='image' 
-                            accept='image/*'
-                            value ={this.state.image}
-                            onChange={this.updateState}
-                        />
-                        
+                            <option value="Category" disabled>Category</option>
+                            <option value="farmer">Farmer</option>
+                            <option value="customer">Customer</option>
+                        </select>                        
                         <button className="register-btn" type='submit'>Submit</button>
                     </form> <hr/>
                     <small className = 'text-white'>

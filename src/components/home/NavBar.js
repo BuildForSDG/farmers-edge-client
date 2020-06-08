@@ -24,17 +24,20 @@ export default class NavBar extends Component {
                     <h3 className='logo_text'>Farmers Edge</h3>
                 </div>
                 <ul className='nav-links'>
-                    <li><Link to='/about'> About </Link></li>
-                    <li><Link to='/farmers'>Farmers </Link> </li>
-                    <li><Link to='/customers'> Customers </Link></li>
-                    <li><Link to='/contacts'> Contact </Link></li>
+                    
+                        <div> <li><Link to='/about'> About </Link></li> </div>
 
-                    { token ? 
-                    <button className = 'btn btn-transparent btn-md text-white'  
-                    onClick={this.handleLogout}> Logout </button>
-                    : <button className = 'btn btn-transparent btn-md text-white'  
-                    onClick={() => window.location.href = '/'}> Login </button> 
-                    }
+                            { token ? 
+                               <li><button className = '' onClick={this.handleLogout}> Logout </button></li> 
+                                : 
+                                <div>
+                                    <li><Link to='/farmers'>Farmers </Link> </li>
+                                    <li><Link to='/customers'> Customers </Link></li>
+                                </div>  
+                            }
+
+                            <div> <li><Link to='/contact'> Contact </Link></li> </div>
+                   
                 </ul>
             </nav>
         )

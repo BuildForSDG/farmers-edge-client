@@ -20,8 +20,8 @@ function App(){
                 <Route exact strict path='/' component={Landing} />
                 <Route path='/login' component={LoginForm} />
                 <Route path='/signup' component={Register} />
-                <Route path='/contacts/' component={Contacts} />
-                <Route path='/about/' component={About} />
+                <Route path='/contact' component={Contacts} />
+                <Route path='/about' component={About} />
                 <RouteRedirect path='/farmers' component={Farmers} />
                 <RouteRedirect path='/customers' component={Customers} />
                 {/* <Route component={Default} /> */}
