@@ -118,14 +118,13 @@ export const cropItem = (
 }
 
 // Fetch food product
-export const getProducts = () => {
+export const getProducts = async () => {
   const url = `/api/v1/farmer/product/list`;
-  return axiosGet
-  .request({
-    method:'get',
-    url:url
-  })
-    .then(res => res.data)   
+  const data = await axiosGet
+  .request({ 
+    method: 'get', 
+    url: url })
+  return data 
 }
 
 // consume market API endpoint(customer order)
@@ -146,14 +145,15 @@ export const placeOrder = (productName, totalCost, quantity, waitTime) => {
 }
 
 // Fetch orders
-export const getOrders = () => {
+export const getOrders = async () => {
   const url = `/api/v1/retailer/order/list`;
-  return axiosGet
+  const data = await axiosGet
   .request({
     method:'get',
     url: url
   })
-    .then(res => res.data)   
+  console.log(data);
+  return data   
 }
 
 // consume reset password API endpoint

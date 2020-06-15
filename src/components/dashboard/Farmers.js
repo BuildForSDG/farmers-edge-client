@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {cropItem} from './../../axiosConfigs';
+import {cropItem, getProducts} from './../../axiosConfigs';
 import Product from './Product';
 
 export default class Farmers extends Component {
@@ -11,8 +11,16 @@ export default class Farmers extends Component {
             product:'',
             totalCost:'',
             quantity: '',
-            ready: false
+            ready: false,
+            products: []
         }
+    }
+
+    async componentDidMount(){
+        const {data} = await getProducts();
+        this.setState({
+            products: data
+        })
     }
 
     handleChange = event => {
@@ -38,16 +46,13 @@ export default class Farmers extends Component {
 
     render() {
 
-        const loggedInUser = localStorage.getItem('username');
-        const {retailerEmail, product, totalCost, quantity, ready} = this.state;
+        // const loggedInUser = localStorage.getItem('username');
+        const {retailerEmail, product, totalCost, quantity, ready, products} = this.state;
 
         return (
             <div className='coontainer'>
                 <div className='text-center mt-2'>
-                    {
-                        loggedInUser !== undefined ? <h4>Welcome, { loggedInUser }</h4> : ''
-
-                    }
+                {/* <h4>Welcome, { loggedInUser }</h4> */}
                 </div>
 
                 <div className='row'>
@@ -97,14 +102,20 @@ export default class Farmers extends Component {
 
                     </div>
                     <div className='col-md-6'>
-                        <h5  className='text-center'> Your food produce</h5>
+                        <h5 className='text-center m-4'> Your food produce</h5>
                          <div>
-                             <Product />
-                            {/* {
-                                this.props.products.map((id) => {
-                                    return <Product key={id} />
+                            {
+                                products.map(product => {
+                                    return <Product
+                                            key={product.id}
+                                            retailerEmail = {product.retailerEmail}
+                                            product = {product.product}
+                                            totalCost = {product.totalCost}
+                                            quantity = {product.quantity}
+                                            ready = {product.ready}                                        
+                                            />;
                                 } )
-                            }  */}
+                            } 
                         </div>
                     </div>
                 </div>
