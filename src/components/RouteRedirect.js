@@ -1,39 +1,58 @@
 import React from 'react'
 import {Redirect, Route} from 'react-router-dom';
 
-const RouteRedirect = () => {
+const ProtectedRoute = ({Component, ...rest}) => {
 
     // current user token
-    let currentUser = localStorage.getItem('isLoggedIn');
+    const currentUser = localStorage.getItem('userToken');
 
     // current user: farmer or customer
-    let userType = localStorage.getItem('userType');
+    const userType = localStorage.getItem('userType');
 
     return (
-        <Route
-            // {...rest}
-            render = { () => {
+        <Route {...rest} 
+            render = { props => 
+                {
+                    if (!currentUser) {
+                        return (<Redirect to = {{ 
+                            pathname: '/login',
+                            state: {from: props.location}
+                        }} />)
+                    }
+                    else if (currentUser && userType === 'farmer'){
+                        return (<Redirect to = {{pathname: '/farmers'}} />)
+                    }
+                    else if (currentUser && userType === 'customer'){
+                        return (<Redirect to = {{pathname: '/customers'}} />)
+                    }
+                    else {
+                        return (<Component {...rest} />)
+                    }
+                }
 
-                if (!currentUser) {
-                    return (<Redirect to = '/login' />)
-                }
-            
-                else if (currentUser && userType === 'farmer'){
-                    return (<Redirect to = '/farmers'/>)
-                }
-            
-                else if (currentUser && userType === 'customer'){
-                    return (<Redirect to = '/customers'/>)
-                }
-            
-                else {
-                    return (<Redirect to = '/' />)
-                }
             }
-
-           }
         />
     );
 }
 
-export default RouteRedirect;
+export default ProtectedRoute;
+
+
+// export const PrivateRoute = ({ component: Component, ...rest }) => (
+    
+//     <Route
+//       {...rest}
+//       render={props =>
+//         props.userToken !== undefined ? (
+//           <Component {...props} />
+//         ) : (
+//           <Redirect
+//             to={{
+//               pathname: "/",
+//               state: { from: props.location }
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
