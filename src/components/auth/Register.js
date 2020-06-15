@@ -42,6 +42,8 @@ class Register extends React.Component {
             this.state.phoneNumber, this.state.idNumber,
             this.state.typeUser
         );
+
+        // window.location.href = '/login';
     }
     
     render(){

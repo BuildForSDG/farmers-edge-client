@@ -19,31 +19,23 @@ This app aims to address hunger problem in the world by focusing on achievemment
 #### Prerequisites
 
 ```
--  node
--  browser(Preferably chrome)
+- node
+- browser(Preferably chrome)
 ```
 
 #### Installation
-
-Clone the repository
 
 ```
 git clone https://github.com/BuildForSDG/farmers-edge-client.git
 ```
 
-Move into the project folder
-
 ```
 cd farmers-edge-client
 ```
 
-Install the dependencies of the project
-
 ```
 yarn install
 ```
-
-Run the app
 
 ```
 yarn start
@@ -59,7 +51,7 @@ yarn start
 
 #### Url for the hosted app in Netlify
 
-To be provided soon
+- `https://farmers-edge.netlify.app/`
 
 ## Functionality
 
@@ -67,12 +59,12 @@ To be provided soon
 
 - User can register
 - Verified user can login
-- Authenticated user can reset password
-- Authenticated user can view their dashboard and update it
+- User can reset password
+- Authenticated user can create a product
+- Authenticated user can create/place an order
+- User can send query using contact form
 
 ## Authors
-
-List the team behind this project. Their names linked to their Github, LinkedIn, or Twitter accounts should siffice. Ok to signify the role they play in the project, including the TTL and mentor
 
 - [Ogunlana Tunbosun](https://github.com/bosunogunlana) - Mentor
 - [Levy Naibei](https://github.com/Levy-Naibei) - TTL

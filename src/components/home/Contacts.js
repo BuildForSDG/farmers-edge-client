@@ -27,13 +27,10 @@ class Contactus extends Component {
     handleSubmit = (event) => {
 
         event.preventDefault();
-        
-        ContactUs(
-            this.state.name,
-            this.state.email,
-            this.state.subject,
-            this.state.message
-        )
+
+        ContactUs(this.state.name, this.state.email,
+                this.state.subject, this.state.message
+            )
     }
 
     render() {

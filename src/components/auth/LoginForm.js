@@ -61,6 +61,9 @@ export default class LoginForm extends React.Component {
             onChange={this.handleChange}
           />
           <button className="login-btn" type="submit">Login</button>
+          <small className='ml-4'>
+            <Link to='/resetpassword' className='text-info'>Forgot Password?</Link>
+          </small>
         </form>
         <hr/>
         <small className = 'text-white'>

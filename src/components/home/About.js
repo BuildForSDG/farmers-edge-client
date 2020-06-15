@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom'
                             <li>Farming advisory </li>
                             <li>Access to financial aid</li>
                             <li>Pricing </li> 
-                            <div className='mt-2 p-2 text-white text-center bg-success border border-info rounded'>
+                            <div className='about-farmer-btn'>
                                 <Link to='/signup'> Farmer Sign Up</Link>
                             </div>
                         </ul>
@@ -34,7 +34,7 @@ import { Link } from 'react-router-dom'
                             <li>High Quality Produce </li> 
                             <li>Assured food safety</li>
                             <li>Affordable Delivery </li>
-                            <div className='mt-2 p-2 bg-info text-center text-white border border-success rounded'>
+                            <div className='about-cutomer-btn'>
                                 <Link to='/signup'> Customer Sign Up</Link>
                             </div>
                         </ul>
