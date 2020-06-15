@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {placeOrder} from './../../axiosConfigs';
+import {placeOrder, getOrders} from './../../axiosConfigs';
 import Order from './Order'
 
 export default class Farmers extends Component {
@@ -9,9 +9,17 @@ export default class Farmers extends Component {
         this.state = {
             productName:'',
             totalCost:'',
-            quantity: '',
-            waitTime:''
+            quantity:'',
+            waitTime:'',
+            orders:[]
         }
+    }
+
+    async componentDidMount(){
+        const {data} = await getOrders();
+        this.setState({
+            orders: data 
+        })
     }
 
     handleChange = (event) => {
@@ -31,14 +39,14 @@ export default class Farmers extends Component {
 
     render() {
 
-        const {productName, totalCost, quantity, waitTime} = this.state;
+        const {productName, totalCost, quantity, waitTime, orders} = this.state;
 
-        const username = localStorage.getItem('username');
+        // const username = localStorage.getItem('username');
 
         return (
             <div className='coontainer'>
                 <div className='text-center'>
-                    <h4>Welcome, {username}</h4>
+                    {/* <h4>Welcome, {username}</h4> */}
                 </div>
 
                 <div className='row'>
@@ -81,14 +89,18 @@ export default class Farmers extends Component {
                         </form>
                     </div>
                     <div className='col-md-6'>
-                        <h5>Orders you placed</h5>
-
-                        <Order />
-                        {/* {
-                            orders.map((order, id) => {
-                                return <Order key={id} order={order} />
+                        <h5 className='text-center m-2'>Orders you placed</h5>
+                        {
+                            orders.map((order) => {
+                                return <Order 
+                                        key={order.id} 
+                                        productName = {order.productName}
+                                        totalCost = {order.totalCost}
+                                        quantity = {order.quantity}
+                                        waitTime = {order.waitTime}
+                                        />
                             } )
-                        } */}
+                        }
                     </div>
                 </div>
             </div>
