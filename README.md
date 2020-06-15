@@ -51,7 +51,7 @@ yarn start
 
 #### Url for the hosted app in Netlify
 
-- `https://farmers-edge.netlify.app/`
+- `https://fe-staging.netlify.app/`
 
 ## Functionality
 
