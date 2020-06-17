@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'
 
-// const cors = 'https://cors-anywhere.herokuapp.com/'; 
 const BASE_URL = 'https://be-staging.herokuapp.com';
 
 const config = {
   headers: {
-    'Content-Type': 'multipart/form-data'
+    'Content-Type': 'multipart/form-data',
+    'Access-Control-Allow-Origin': '*',
   }
 }
 
@@ -14,7 +14,8 @@ const config = {
 export const axiosGet = axios.create({
   baseURL: BASE_URL,
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
   }
 });
 
