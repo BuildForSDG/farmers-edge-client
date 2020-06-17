@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-// import { toast } from 'react-toastify';
 import {SignUp} from './../../axiosConfigs';
 
 class Register extends React.Component {

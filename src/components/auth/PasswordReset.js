@@ -6,7 +6,6 @@ export default class PasswordReset extends Component {
         super(props);
         this.state = {
             email: '',
-            success: true
         }
     }
 

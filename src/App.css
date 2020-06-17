@@ -182,7 +182,7 @@ header {
   color: white;
 }
 
-.btn {
+.butn {
   font-size: 18px;
   color: rgb(29, 43, 231);
   margin: 5px;
@@ -192,13 +192,14 @@ header {
   border-radius: 25px;
 }
 
-.btn-more {
+.butn-more {
   background: rgb(4, 224, 103);
 }
 
-.btn-more:hover {
+.butn-more:hover {
   background: wheat;
   transition: 0.5s;
+  text-decoration: none;
 }
 
 /* navbar */
@@ -314,14 +315,14 @@ textarea {
 
 .customer li:before {
   content: '✓';
-  font-size: 23px;
+  font-size: 24px;
   color: rgb(75, 177, 75)
 }
 
 .farmer li:before {
   content: '✓';
   font-size: 24px;
-  color: rgb(89, 89, 197)
+  color: rgb(75, 177, 75)
 }
 
 /* farmers component */
