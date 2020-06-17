@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'
 
-const BASE_URL = 'https://be-staging.herokuapp.com';
 const cors = 'https://cors-anywhere.herokuapp.com/';
+const APP_URL = 'https://be-staging.herokuapp.com';
+const BASE_URL = `${cors}${APP_URL}`;
 
 const config = {
   headers: {
@@ -30,7 +31,7 @@ export const LoginUser = (email, password) => {
     email: email,
     password: password
   }
-  axios.post(`${cors}${BASE_URL}/auth/v1/login/`, data)
+  axios.post(`${BASE_URL}/auth/v1/login/`, data)
     .then(res => {  
     const token = res.data.token;
     const typeOfUser = res.data.user.typeUser;
@@ -69,7 +70,7 @@ export const SignUp = (
     formData.append('idNumber', idNumber);
     formData.append('typeUser', typeUser);
 
-  axios.post(`${cors}${BASE_URL}/auth/v1/register/`, formData, config)
+  axios.post(`${BASE_URL}/auth/v1/register/`, formData, config)
     .then(res => {  
       toast.success(
         'You have successfully created an account, please check your email to verify your account.'
@@ -89,7 +90,7 @@ export const ContactUs = (name, email, subject, message) => {
     message: message
   }
 
-  axios.post(`${cors}${BASE_URL}/api/v1/contact/`, data)
+  axios.post(`${BASE_URL}/api/v1/contact/`, data)
     .then(res => {
 
         window.location.href = '/contact';
@@ -111,7 +112,7 @@ export const cropItem = (
     }
 
   // create food product with order
-  axios.post(`${cors}${BASE_URL}/api/v1/farmer/product/`, data)
+  axios.post(`${BASE_URL}/api/v1/farmer/product/`, data)
     .then(res => {
 
         window.location.href = '/farmers';
@@ -139,7 +140,7 @@ export const placeOrder = (productName, totalCost, quantity, waitTime) => {
   }
 
   // create order
-  axios.post(`${cors}${BASE_URL}/api/v1/retailer/order/`, data)
+  axios.post(`${BASE_URL}/api/v1/retailer/order/`, data)
     .then(res => {
 
         window.location.href = '/customers';
@@ -163,7 +164,7 @@ export const ResetPassword = (email) => {
     email:email,
   }
 
-  axios.post(`${cors}${BASE_URL}/auth/v1/request/`, data)
+  axios.post(`${BASE_URL}/auth/v1/request/`, data)
     .then(res => {
 
       toast.success(
