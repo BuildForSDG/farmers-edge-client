@@ -6,7 +6,7 @@ const BASE_URL = 'https://be-staging.herokuapp.com';
 const config = {
   headers: {
     'Content-Type': 'multipart/form-data',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': '*'
   }
 }
 
@@ -15,7 +15,7 @@ export const axiosGet = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': '*'
   }
 });
 
@@ -83,19 +83,23 @@ export const SignUp = (
 
 // consume contact API endpoint
 export const ContactUs = (name, email, subject, message) => {
-  const data = {
+  const contactData = {
     name: name,
     email: email,
     subject: subject,
     message: message
-  }
+  };
 
-  axios.post(`${BASE_URL}/api/v1/contact/`, data)
+  return axiosGet
+    .request({
+      method: 'post',
+      url: `${BASE_URL}/api/v1/contact/`,
+      data: contactData
+    })
     .then(res => {
 
-        window.location.href = '/contact';
-    })
-
+      window.location.href = '/contact';
+    })  
 }
 
 // consume market API endpoint(farm product)
