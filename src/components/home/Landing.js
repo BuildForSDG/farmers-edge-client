@@ -15,7 +15,7 @@ export default class Landing extends Component {
                     affordable and actionable information to a range of <br/>
                     actors, most imporantly smallholder farmers </p><br/>
 
-                <Link to = '/login' className='btn btn-more'>More</Link>
+                <Link to = '/signup' className='butn butn-more'>More</Link>
             </div>
             </div>
         )

@@ -2,8 +2,9 @@ import axios from 'axios';
 import { toast } from 'react-toastify'
 
 const BASE_URL = 'https://be-staging.herokuapp.com';
+const cors = 'https://cors-anywhere.herokuapp.com/';
 
-const config = {     
+const config = {
   headers: {
     'Content-Type': 'multipart/form-data'
   }
@@ -18,10 +19,10 @@ export const axiosGet = axios.create({
 });
 
 // handles redirection after registe and password reset http requests
-export const timeOut=()=> {
-  setTimeout(() => window.location.href='/login', 5000);
-  clearTimeout();
-}
+// export const timeOut=()=> {
+//   setTimeout(() => window.location.href='/login', 5000);
+//   clearTimeout();
+// }
 
 // consume login API endpoint
 export const LoginUser = (email, password) => {
@@ -29,7 +30,7 @@ export const LoginUser = (email, password) => {
     email: email,
     password: password
   }
-  axios.post(`${BASE_URL}/auth/v1/login/`, data)
+  axios.post(`${cors}${BASE_URL}/auth/v1/login/`, data)
     .then(res => {  
     const token = res.data.token;
     const typeOfUser = res.data.user.typeUser;
@@ -68,7 +69,7 @@ export const SignUp = (
     formData.append('idNumber', idNumber);
     formData.append('typeUser', typeUser);
 
-  axios.post(`${BASE_URL}/auth/v1/register/`, formData, config)
+  axios.post(`${cors}${BASE_URL}/auth/v1/register/`, formData, config)
     .then(res => {  
       toast.success(
         'You have successfully created an account, please check your email to verify your account.'
@@ -76,7 +77,7 @@ export const SignUp = (
   })
  // .catch(err => console.log(err))
 
- timeOut();
+// timeOut();
 }
 
 // consume contact API endpoint
@@ -88,7 +89,7 @@ export const ContactUs = (name, email, subject, message) => {
     message: message
   }
 
-  axios.post(`${BASE_URL}/api/v1/contact/`, data)
+  axios.post(`${cors}${BASE_URL}/api/v1/contact/`, data)
     .then(res => {
 
         window.location.href = '/contact';
@@ -110,7 +111,7 @@ export const cropItem = (
     }
 
   // create food product with order
-  axios.post(`${BASE_URL}/api/v1/farmer/product/`, data)
+  axios.post(`${cors}${BASE_URL}/api/v1/farmer/product/`, data)
     .then(res => {
 
         window.location.href = '/farmers';
@@ -123,7 +124,8 @@ export const getProducts = async () => {
   const data = await axiosGet
   .request({ 
     method: 'get', 
-    url: url })
+    url: url
+   })
   return data 
 }
 
@@ -137,7 +139,7 @@ export const placeOrder = (productName, totalCost, quantity, waitTime) => {
   }
 
   // create order
-  axios.post(`${BASE_URL}/api/v1/retailer/order/`, data)
+  axios.post(`${cors}${BASE_URL}/api/v1/retailer/order/`, data)
     .then(res => {
 
         window.location.href = '/customers';
@@ -152,7 +154,6 @@ export const getOrders = async () => {
     method:'get',
     url: url
   })
-  console.log(data);
   return data   
 }
 
@@ -162,15 +163,14 @@ export const ResetPassword = (email) => {
     email:email,
   }
 
-  axios.post(`${BASE_URL}/auth/v1/request/`, data)
+  axios.post(`${cors}${BASE_URL}/auth/v1/request/`, data)
     .then(res => {
 
       toast.success(
         'Password reset request sent, please check your email to reset password.'
         );
     })
-
-  timeOut(); 
+  //timeOut(); 
 }
 
 // get username
