@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'
 
-const cors = 'https://cors-anywhere.herokuapp.com/';
-const APP_URL = 'https://be-staging.herokuapp.com';
-const BASE_URL = `${cors}${APP_URL}`;
+// const cors = 'https://cors-anywhere.herokuapp.com/'; 
+const BASE_URL = 'https://be-staging.herokuapp.com';
 
 const config = {
   headers: {
@@ -165,7 +164,7 @@ export const ResetPassword = (email) => {
   }
 
   axios.post(`${BASE_URL}/auth/v1/request/`, data)
-    .then(res => {
+     .then(res => {
 
       toast.success(
         'Password reset request sent, please check your email to reset password.'
