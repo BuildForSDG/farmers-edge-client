@@ -1,37 +1,36 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'
 
+// const BASE_URL = 'http://127.0.0.1:8000';
 const BASE_URL = 'https://be-staging.herokuapp.com';
 
 const config = {
   headers: {
     'Content-Type': 'multipart/form-data',
-    'Access-Control-Allow-Origin': '*'
   }
-}
+};
 
-// axios config for get requests
+// axios config
 export const axiosGet = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
   }
 });
 
-// handles redirection after registe and password reset http requests
-// export const timeOut=()=> {
-//   setTimeout(() => window.location.href='/login', 5000);
-//   clearTimeout();
-// }
-
 // consume login API endpoint
 export const LoginUser = (email, password) => {
-  const data = {
+  const loginData = {
     email: email,
     password: password
-  }
-  axios.post(`${BASE_URL}/auth/v1/login/`, data)
+  };
+
+  return axiosGet
+    .request({
+      method: 'post',
+      url: '/auth/v1/login/', 
+      data: loginData
+    })
     .then(res => {  
     const token = res.data.token;
     const typeOfUser = res.data.user.typeUser;
@@ -47,8 +46,7 @@ export const LoginUser = (email, password) => {
     } else if (typeOfUser === 'customer') {
       window.location.href = '/customers';
     }
-})
-  .catch(err => console.log(err))
+  })
 }
 
 // consume register API enpoint
@@ -59,16 +57,16 @@ export const SignUp = (
   phoneNumber, idNumber, 
   typeUser) => {
 
-    const formData = new FormData();
-    formData.append('firstName', firstName);
-    formData.append('surname', surname);
-    formData.append('username', username);
-    formData.append('email', email);
-    formData.append('password', password);
-    formData.append('location', location);
-    formData.append('phoneNumber', phoneNumber);
-    formData.append('idNumber', idNumber);
-    formData.append('typeUser', typeUser);
+  const formData = new FormData();
+  formData.append('firstName', firstName);
+  formData.append('surname', surname);
+  formData.append('username', username);
+  formData.append('email', email);
+  formData.append('password', password);
+  formData.append('location', location);
+  formData.append('phoneNumber', phoneNumber);
+  formData.append('idNumber', idNumber);
+  formData.append('typeUser', typeUser);
 
   axios.post(`${BASE_URL}/auth/v1/register/`, formData, config)
     .then(res => {  
@@ -76,9 +74,6 @@ export const SignUp = (
         'You have successfully created an account, please check your email to verify your account.'
         );
   })
- // .catch(err => console.log(err))
-
-// timeOut();
 }
 
 // consume contact API endpoint
@@ -93,7 +88,7 @@ export const ContactUs = (name, email, subject, message) => {
   return axiosGet
     .request({
       method: 'post',
-      url: `${BASE_URL}/api/v1/contact/`,
+      url: '/api/v1/contact/',
       data: contactData
     })
     .then(res => {
@@ -164,22 +159,19 @@ export const getOrders = async () => {
 
 // consume reset password API endpoint
 export const ResetPassword = (email) => {
-  const data = {
-    email:email,
+  const passData = {
+    email: email,
   }
 
-  axios.post(`${BASE_URL}/auth/v1/request/`, data)
+  return axiosGet
+   .request({
+     method: 'post',
+     url: '/auth/v1/request/',
+     data: passData
+    })
      .then(res => {
-
       toast.success(
         'Password reset request sent, please check your email to reset password.'
         );
-    })
-  //timeOut(); 
+    }) 
 }
-
-// get username
-// export const getUserData = () => {
-//   axios.get(`${BASE_URL}/auth/v1/user/`)
-//     .then( res => res.data)
-// }

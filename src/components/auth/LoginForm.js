@@ -33,14 +33,7 @@ export default class LoginForm extends React.Component {
       <div className='login-container'>
         
         <div className='form-header'>
-          Sign In to Farmers Edge
-          <a className='link'
-              href='farmers-edge.netlify.com'
-              target='_blank'
-              rel="noreferrer noopener"
-          ><br/>
-              farmers-edge.netlify.com 
-          </a>
+          <p>Sign In to Farmers Edge</p>
         </div>
 
         <form className="login-form" onSubmit={this.handleSubmit}>
