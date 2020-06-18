@@ -20,6 +20,7 @@ export default class PasswordReset extends Component {
 
         ResetPassword(this.state.email);
         
+        this.props.history.push('/login');
     }
 
     render() {

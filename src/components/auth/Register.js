@@ -22,7 +22,6 @@ class Register extends React.Component {
     };
 
     updateState = (inputs) => {
-        // console.log(inputs.target.value)
         this.setState(
             {
                 [inputs.target.name]:inputs.target.value
@@ -42,7 +41,7 @@ class Register extends React.Component {
             this.state.typeUser
         );
 
-        // window.location.href = '/login';
+        this.props.history.push('/login');
     }
     
     render(){
@@ -50,14 +49,7 @@ class Register extends React.Component {
                 <div className='register-container'>
 
                     <div className='form-header'>
-                        Sign Up in Farmers Edge
-                        <a className='link'
-                            href='farmers-edge.netlify.com'
-                            target='_blank'
-                            rel="noreferrer noopener"
-                        ><br/>
-                            farmers-edge.netlify.com 
-                        </a>
+                        <p>Sign Up in Farmers Edge</p>
                     </div>
 
                     <form className='register-form' onSubmit={this.handleSubmit}>
