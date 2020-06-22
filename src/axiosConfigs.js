@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'
 
-// const BASE_URL = 'http://127.0.0.1:8000';
-const BASE_URL = 'https://be-staging.herokuapp.com';
+const BASE_URL = 'http://127.0.0.1:8000';
+// const BASE_URL = 'https://be-staging.herokuapp.com';
 
 const config = {
   headers: {
@@ -41,7 +41,7 @@ export const LoginUser = (email, password) => {
     localStorage.setItem('username', username);
 
     if (typeOfUser === 'farmer') {
-      window.location.href = '/farmers';
+       window.location.href = '/farmers';
 
     } else if (typeOfUser === 'customer') {
       window.location.href = '/customers';
@@ -71,7 +71,7 @@ export const SignUp = (
   axios.post(`${BASE_URL}/auth/v1/register/`, formData, config)
     .then(res => {  
       toast.success(
-        'You have successfully created an account, please check your email to verify your account.'
+        'Account created successfully, please check your email to verify.'
         );
   })
 }
@@ -92,8 +92,7 @@ export const ContactUs = (name, email, subject, message) => {
       data: contactData
     })
     .then(res => {
-
-      window.location.href = '/contact';
+      window.location.href = '/';
     })  
 }
 

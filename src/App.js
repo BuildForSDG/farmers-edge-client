@@ -16,6 +16,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // import Default from './components/Default.js';
 
+const currentUser = localStorage.getItem('userToken');
+
 function App(){
     return(
         <React.Fragment>
@@ -38,8 +40,8 @@ function App(){
                 <Route path='/resetpassword' component={PasswordReset} />
                 <Route path='/contact' component={Contacts} />
                 <Route path='/about' component={About} />
-                <ProtectedRoute exact path='/farmers' component={Farmers} />
-                <ProtectedRoute exact path='/customers' component={Customers} />
+                <ProtectedRoute exact path='/farmers' component={Farmers}  currentUser={currentUser}/>
+                <ProtectedRoute exact path='/customers' component={Customers} currentUser={currentUser} />
                 {/* <Route component={Default} /> */}
             </Switch>
         </React.Fragment>
