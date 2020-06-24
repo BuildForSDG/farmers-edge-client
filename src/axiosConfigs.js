@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'
 
-// const BASE_URL = 'http://127.0.0.1:8000';
-const BASE_URL = 'https://be-staging.herokuapp.com';
+const BASE_URL = 'https://farmers-edge.herokuapp.com';
 
 const config = {
   headers: {
