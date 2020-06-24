@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bc2c152f-411d-47ef-bd7d-b19d5460620f/deploy-status)](https://app.netlify.com/sites/farmers-edge/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4fbe3122-c42a-4b52-915c-82ea10097aa6/deploy-status)](https://app.netlify.com/sites/farmers-edge/deploys)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb59be9bdd5d4b40ad1210174384499e)](https://app.codacy.com/gh/BuildForSDG/farmers-edge-client?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/farmers-edge-client&utm_campaign=Badge_Grade_Settings)
 
 # Farmers Edge
@@ -51,7 +51,7 @@ yarn start
 
 #### Url for the hosted app in Netlify
 
-- `https://fe-staging.netlify.app/`
+- https://farmers-edge.netlify.app/
 
 ## Functionality
 
