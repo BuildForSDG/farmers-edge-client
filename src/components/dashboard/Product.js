@@ -1,24 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Product extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            ready: false
-        }
-    }
-
-    onChangeCheckbox = event => {
-        this.setState({
-            ready: event.target.checked
-        })
-    }
-
     render() {
 
-        const {retailerEmail, product, totalCost, quantity} = this.props;
-        const{ready} = this.state;
+        const {retailerEmail, product, totalCost, quantity, ready, onChangeCheckbox} = this.props;
 
         return (
             <div>
@@ -32,7 +17,7 @@ export default class Product extends Component {
                         type="checkbox"
                         name ="ready"
                         checked={ready}
-                        onChange={this.onChangeCheckbox} 
+                        onChange={onChangeCheckbox} 
                         />
                         </p>
                     </div>

@@ -41,12 +41,12 @@ export default class Farmers extends Component {
 
         const {productName, totalCost, quantity, waitTime, orders} = this.state;
 
-        // const username = localStorage.getItem('username');
+        const loggedInUser = localStorage.getItem('firstname');
 
         return (
             <div className='coontainer'>
                 <div className='text-center'>
-                    {/* <h4>Welcome, {username}</h4> */}
+                    <p>Welcome, <span className='welcome'>{loggedInUser}</span></p>
                 </div>
 
                 <div className='row'>

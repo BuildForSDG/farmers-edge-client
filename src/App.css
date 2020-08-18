@@ -4,12 +4,14 @@
   padding: 0;
 }
 
-/* body {
-  background-color: beige;
-  } */
-
 .App {
   font-family: sans-serif;
+}
+
+/* welcome user to dashboard */
+.welcome {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
 }
 
 .login-container {
@@ -66,16 +68,16 @@ input.error {
 .login-btn {
   padding: 10px 15px;
   margin: 4px;
-  background-color: rgb(25, 156, 165);
-  color: white;
-  border: 1px solid rgb(25, 156, 165);
+  background-color: #fff;
+  color: #4caf50;
+  border: 1px solid forestgreen;
   border-radius: 5px;
 }
 
 .login-btn:hover {
   cursor: pointer;
-  background-color: white;
-  color: rgb(25, 156, 165);
+  background-color:  #4caf50;
+  color: #fff;
 }
 
 /* Register form */
@@ -83,7 +85,7 @@ input.error {
   padding: 1rem;
   max-width: 500px;
   margin: 4rem auto;
-  background-color: forestgreen;
+  background-color:  forestgreen;
   text-align: center;
   border-radius: 5px;
 }
@@ -106,26 +108,25 @@ select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 3px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   align-items: center;
 }
 
 .register-btn {
   width: 20%;
-  background-color: rgb(25, 156, 165);
-  color: white;
+  background-color: #fff;
+  color:  #4caf50;
   padding: 10px 20px;
   margin: 4px 0;
-  border: 1px solid rgb(25, 156, 165);
-  border-radius: 4px;
+  border: 1px solid forestgreen;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .register-btn:hover {
   cursor: pointer;
-  background-color: white;
-  color: rgb(25, 156, 165);
+  background-color: #4caf50;
+  color: #fff;
 }
 
 /* h1 {

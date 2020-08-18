@@ -29,9 +29,9 @@ export default class Farmers extends Component {
         });
     }
 
-    onChangeCheckbox = event => {
+    onChangeCheckbox = () => {
         this.setState({
-            ready: event.target.checked
+            ready: !this.state.checked
         })
     }
 
@@ -46,13 +46,14 @@ export default class Farmers extends Component {
 
     render() {
 
-        // const loggedInUser = localStorage.getItem('username');
+        const loggedInUser = localStorage.getItem('firstname');
+        
         const {retailerEmail, product, totalCost, quantity, ready, products} = this.state;
 
         return (
             <div className='coontainer'>
                 <div className='text-center mt-2'>
-                {/* <h4>Welcome, { loggedInUser }</h4> */}
+                    <h4>Welcome, { loggedInUser }</h4>
                 </div>
 
                 <div className='row'>

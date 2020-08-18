@@ -51,6 +51,9 @@ yarn start
 
 #### Url for the hosted app in Netlify
 
+API is hosted in free Heroku account, the server enters `sleep mode` when not in use.
+If you notice a delay while sending a request, please allow a few seconds for the servers to restart.
+
 - `https://fe-staging.netlify.app/`
 
 ## Functionality
