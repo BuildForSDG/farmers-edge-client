@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'
 
-// const BASE_URL = 'http://127.0.0.1:8000';
+//const BASE_URL = 'http://127.0.0.1:8000';
 const BASE_URL = 'https://be-staging.herokuapp.com';
 
 const config = {
@@ -34,11 +34,11 @@ export const LoginUser = (email, password) => {
     .then(res => {  
     const token = res.data.token;
     const typeOfUser = res.data.user.typeUser;
-    const username = res.data.user.userName;
+    const firstname = res.data.user.firstName;
     
     localStorage.setItem('userToken', token);
     localStorage.setItem('userType', typeOfUser);
-    localStorage.setItem('username', username);
+    localStorage.setItem('firstname', firstname);
 
     if (typeOfUser === 'farmer') {
       window.location.href = '/farmers';
@@ -51,21 +51,15 @@ export const LoginUser = (email, password) => {
 
 // consume register API enpoint
 export const SignUp = (
-  firstName, surname, 
-  username, email, 
-  password, location, 
-  phoneNumber, idNumber, 
-  typeUser) => {
+  firstName, surname, email, 
+  password, location, typeUser) => {
 
   const formData = new FormData();
   formData.append('firstName', firstName);
   formData.append('surname', surname);
-  formData.append('username', username);
   formData.append('email', email);
   formData.append('password', password);
   formData.append('location', location);
-  formData.append('phoneNumber', phoneNumber);
-  formData.append('idNumber', idNumber);
   formData.append('typeUser', typeUser);
 
   axios.post(`${BASE_URL}/auth/v1/register/`, formData, config)
