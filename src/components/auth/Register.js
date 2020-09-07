@@ -8,17 +8,11 @@ class Register extends React.Component {
         this.state = {
                 firstName:'',
                 surname:'',
-                username:'',
                 email:'',
 		        password:'',
                 location:'',
-                phoneNumber:'',
-                idNumber:'',
                 typeUser:''
             }
-
-        this.updateState = this.updateState.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     };
 
     updateState = (inputs) => {
@@ -35,16 +29,17 @@ class Register extends React.Component {
             
         SignUp(
             this.state.firstName, this.state.surname, 
-            this.state.username, this.state.email, 
-            this.state.password,this.state.location,
-            this.state.phoneNumber, this.state.idNumber,
-            this.state.typeUser
+            this.state.email, this.state.password,
+            this.state.location, this.state.typeUser
         );
 
         this.props.history.push('/login');
     }
     
     render(){
+
+        const {firstName, surname, email, password, location} = this.state;
+
         return(
                 <div className='register-container'>
 
@@ -57,7 +52,7 @@ class Register extends React.Component {
                             type = 'text' 
                             name ='firstName' 
                             placeholder ='First Name' 
-                            value={this.state.firstName} 
+                            value={firstName} 
                             onChange={this.updateState}
                             required
                         /> 
@@ -66,16 +61,7 @@ class Register extends React.Component {
                             type = 'text' 
                             name ='surname' 
                             placeholder ='Surname' 
-                            value={this.state.surname} 
-                            onChange={this.updateState}
-                            required
-                        />
-
-                        <input 
-                            type = 'text' 
-                            name ='username' 
-                            placeholder ='username' 
-                            value={this.state.username} 
+                            value={surname} 
                             onChange={this.updateState}
                             required
                         />
@@ -84,7 +70,7 @@ class Register extends React.Component {
                             type = 'email' 
                             name ='email' 
                             placeholder ='Email' 
-                            value={this.state.email} 
+                            value={email} 
                             onChange={this.updateState}
                             required
                         />  
@@ -93,7 +79,7 @@ class Register extends React.Component {
                             type = 'password' 
                             name = 'password' 
                             placeholder ='Password' 
-                            value={this.state.password} 
+                            value={password} 
                             onChange={this.updateState}
                             required
                         />
@@ -102,29 +88,11 @@ class Register extends React.Component {
                             type = 'text' 
                             name = 'location' 
                             placeholder ='Location' 
-                            value={this.state.location} 
+                            value={location} 
                             onChange={this.updateState}
                             required
                         />  
-
-                        <input 
-                            type = 'text' 
-                            name ='phoneNumber' 
-                            placeholder ='Phone Number' 
-                            value={this.state.phoneNumber} 
-                            onChange={this.updateState}
-                            required
-                        />  
-
-                        <input 
-                            type = 'text' 
-                            name = 'idNumber' 
-                            placeholder ='ID Number' 
-                            value={this.state.idNumber} 
-                            onChange={this.updateState}
-                            required
-                        />
-                            
+                                                    
                         <select
                             defaultValue = 'Category'
                             name = 'typeUser'
